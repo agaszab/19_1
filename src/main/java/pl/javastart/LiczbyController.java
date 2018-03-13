@@ -13,9 +13,14 @@ public class LiczbyController {
 
     @GetMapping("/")
     public String main(Model model){
-    int wynik=liczba.dodaj();
-       model.addAttribute("wynik", wynik);
-       return "index";
+
+    int sumaDo=liczba.getSumaDo();
+    int wynik=liczba.dodaj(sumaDo);
+
+    model.addAttribute("wynik", wynik);
+    model.addAttribute("liczba", sumaDo);
+
+    return "index";
 
     }
 
