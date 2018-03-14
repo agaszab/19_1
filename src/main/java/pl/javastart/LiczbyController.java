@@ -11,14 +11,26 @@ public class LiczbyController {
     @Autowired
     private Liczby liczba;
 
+
     @GetMapping("/")
     public String main(Model model){
 
+    Fibonacci fb= new Fibonacci(4000000);
+    Podzielne podzielne = new Podzielne();
+
     int sumaDo=liczba.getSumaDo();
     int wynik=liczba.dodaj(sumaDo);
+    int granica=fb.getGranica();
+    int wynikF=fb.suma(granica);
+    int zakresPodzielne=20;
+    int podzielna=podzielne.podzielna(zakresPodzielne);
 
+    model.addAttribute("wynikF", wynikF);
+    model.addAttribute("granica", granica);
     model.addAttribute("wynik", wynik);
     model.addAttribute("liczba", sumaDo);
+    model.addAttribute("zakresPodzielne", zakresPodzielne);
+    model.addAttribute("podzielna", podzielna);
 
     return "index";
 

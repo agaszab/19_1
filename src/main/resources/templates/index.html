@@ -1,10 +1,66 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Liczby</title>
+    <title>Zadania</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UT-8" />
+    <style>
+
+        body{margin:0; padding:0; font-size:13px; font-family:verdana, Arial, Helvetica, sans-serif; color:#FFFFFF; background-color:#585C3F;}
+
+        a{outline:none; text-decoration:none;}
+
+        div.container{display:block; width:90%; margin:0; text-align:left; padding-left: 5%; padding-right: 5%; }
+        div.top {background-color:#585C3F;}
+        div.header { background-color: darkkhaki;}
+        span {color: darkorange;}
+        h2 {font-size:15px; font-weight:normal;
+            font-family:Georgia, "Times New Roman", Times, serif;
+            font-weight: bold;}
+
+        div.header h1 {color: #291700;
+            margin-bottom: 20px;
+            display: block;margin:0 0 15px 0;
+            padding:10px;
+            font-size:25px; font-weight:normal;
+            font-family:Georgia, "Times New Roman", Times, serif;
+            font-weight: bold;
+            border-bottom:1px dotted #362C20;}
+        p{
+            margin-bottom:30px;
+            font-size:14px;
+        }
+
+    </style>
 </head>
+
 <body>
-Suma wszystkich liczb mniejszych od 10 podzielnych przez 3 i 5 jest równa <span th:text="'...'+${wynik}"></span>
+<div class="container">
+<div class="header"><h1>ZADANIA</h1></div>
+
+<br class="clear" />
+
+<div class="top">
+
+        <h2>Suma wszystkich liczb mniejszych od 1000 podzielnych przez 3 i 5</h2>
+        <p>Suma wszystkich liczb mniejszych od <span th:text="${liczba}"></span> podzielnych przez 3 i 5 jest równa <span th:text="${wynik}"></span>
+        </p>
+    -------------------------------------------------------------------------------------------------------------------------
+
+    <br />
+        <h2>Suma wszystkich liczb parzystych ciągu Fibonnaciego</h2>
+        <p>Suma wszystkich liczb parzystych ciągu Fibonnaciego składającego się z  <span th:text="${granica}"></span> elementów jest równa <span th:text="${wynikF}"></span></p>
+    <br />
+    -------------------------------------------------------------------------------------------------------------------------
+    <br />
+        <h2>Najmniejsza liczba podzielna przez wszystkie liczby z przedziału</h2>
+        <p>Najmniejsza liczba podzielna przez wszystkie liczby z przedziału (1, <span th:text="${zakresPodzielne}"></span> ) jest równa <span th:text="${podzielna}"></span></p>
+
+        <br class="clear" />
+
+</div>
+</div>
+</body>
 </body>
 </html>
+
