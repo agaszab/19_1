@@ -15,15 +15,15 @@ public class LiczbyController {
     @GetMapping("/")
     public String main(Model model){
 
-    Fibonacci fb= new Fibonacci(4000000);
+    Fibonacci fb= new Fibonacci();
     Podzielne podzielne = new Podzielne();
 
     int sumaDo=liczba.getSumaDo();
     int wynik=liczba.dodaj(sumaDo);
-    int granica=fb.getGranica();
-    int wynikF=fb.suma(granica);
+    long granica=fb.getGranica();
+    long wynikF=fb.sumaFibonacci(granica);
     int zakresPodzielne=20;
-    int podzielna=podzielne.podzielna(zakresPodzielne);
+    int podzielna=podzielne.podzielna();
 
     model.addAttribute("wynikF", wynikF);
     model.addAttribute("granica", granica);

@@ -1,41 +1,36 @@
 package pl.javastart;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Fibonacci {
 
-    private List<Integer> fb = new ArrayList<>();
-    private int granica=4000000;
+    private long granica=4000000;
 
-    public Fibonacci(int granica) {
-        fb.add(1);
-        fb.add(2);
+    public long sumaFibonacci(long granica) {
+        long a=1;
+        long b=1;
+        long c=a+b;
+        long suma=2;
 
-        for (int i=2; i<granica; i++)
+
+        while (suma-c<granica)
         {
-            int n=i-1;
-            int m=i-2;
-            int j=fb.get(n)+fb.get(m);
-            fb.add(j);
+           a=b;
+           b=c;
+           c=a+b;
+
+               if ((c % 2) == 0) {
+                   suma += c;
+               }
+
+           System.out.println("suma: "+suma);
         }
+        return suma-c;
     }
 
 
-    public int suma(int granica){
-        int suma = 0;
-
-        for (int i=0; i<granica; i++)
-        {
-
-            if ((fb.get(i)%2)==0) suma+=fb.get(i);
-        }
-        return suma;
-    }
-
-    public int getGranica() {
+    public long getGranica() {
         return granica;
     }
+
 
 }

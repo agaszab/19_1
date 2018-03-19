@@ -11,7 +11,7 @@ public class LiczbyTest {
         Liczby liczby = new Liczby();
         int sumaDo=10;
 
-        int wynik = liczby.dodaj(sumaDo);
+        long wynik = liczby.dodaj(sumaDo);
 
         Assert.assertThat(wynik, CoreMatchers.is(23));
     }
@@ -22,7 +22,7 @@ public class LiczbyTest {
         Liczby liczby = new Liczby();
         int sumaDo=25;
 
-        int wynik = liczby.dodaj(sumaDo);
+        long wynik = liczby.dodaj(sumaDo);
 
         Assert.assertThat(wynik, CoreMatchers.is(543));
     }
@@ -33,7 +33,7 @@ public class LiczbyTest {
         Liczby liczby = new Liczby();
         int sumaDo=50;
 
-        int wynik = liczby.dodaj(sumaDo);
+        long wynik = liczby.dodaj(sumaDo);
 
         Assert.assertThat(wynik, CoreMatchers.is(543));
     }

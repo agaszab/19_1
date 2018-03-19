@@ -5,49 +5,41 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class FibonacciTest {
+    Fibonacci fb = new Fibonacci();
 
    @Test
     public void shouldSumFor3() {
-        Fibonacci fb = new Fibonacci(3);
-
-        int wynik = fb.suma(3);
-
+        long wynik = fb.sumaFibonacci(3);
         Assert.assertThat(wynik, CoreMatchers.is(2));
     }
 
     @Test
     public void shouldSumFor10() {
-        Fibonacci fb = new Fibonacci(10);
-
-        int wynik = fb.suma(10);
-
-        Assert.assertThat(wynik, CoreMatchers.is(44));
+        long wynik = fb.sumaFibonacci(10);
+        Assert.assertThat(wynik, CoreMatchers.is(8));
     }
 
     @Test
-    public void shouldSumFor0() {
-        Fibonacci fb = new Fibonacci(0);
-
-        int wynik = fb.suma(0);
-
+    public void shouldSumFor4000() {
+        long wynik = fb.sumaFibonacci(0);
         Assert.assertThat(wynik, CoreMatchers.is(0));
     }
 
     @Test
     public void shouldSumFor15() {
-        Fibonacci fb = new Fibonacci(0);
-
-        int wynik = fb.suma(15);
-
-        Assert.assertThat(wynik, CoreMatchers.is(798));
+        long  wynik = fb.sumaFibonacci(15);
+        Assert.assertThat(wynik, CoreMatchers.is(8));
     }
 
     @Test
     public void shouldSumFor21() {
-        Fibonacci fb = new Fibonacci(21);
+        long wynik = fb.sumaFibonacci(21);
+        Assert.assertThat(wynik, CoreMatchers.is(8));
+    }
 
-        int wynik = fb.suma(21);
-
-        Assert.assertThat(wynik, CoreMatchers.is(14328));
+    @Test
+    public void shouldSumFor1000() {
+        long wynik = fb.sumaFibonacci(1000);
+        Assert.assertThat(wynik, CoreMatchers.is(296));
     }
 }
