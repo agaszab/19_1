@@ -16,21 +16,21 @@ public class LiczbyController {
     public String main(Model model){
 
     Fibonacci fb= new Fibonacci();
-    Podzielne podzielne = new Podzielne();
+    RoznicaKwadratow roznicaKwadratow=new RoznicaKwadratow();
 
     int sumaDo=liczba.getSumaDo();
     int wynik=liczba.dodaj(sumaDo);
     long granica=fb.getGranica();
     long wynikF=fb.sumaFibonacci(granica);
-    int zakresPodzielne=20;
-    int podzielna=podzielne.podzielna();
+    int limit=roznicaKwadratow.getLimit();
+    int roznica=roznicaKwadratow.roznicaKwadratow(limit);
 
     model.addAttribute("wynikF", wynikF);
     model.addAttribute("granica", granica);
     model.addAttribute("wynik", wynik);
     model.addAttribute("liczba", sumaDo);
-    model.addAttribute("zakresPodzielne", zakresPodzielne);
-    model.addAttribute("podzielna", podzielna);
+    model.addAttribute("roznica", roznica);
+    model.addAttribute("limit", limit);
 
     return "index";
 

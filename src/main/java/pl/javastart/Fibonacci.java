@@ -6,25 +6,19 @@ public class Fibonacci {
     private long granica=4000000;
 
     public long sumaFibonacci(long granica) {
-        long a=1;
+        long a=0;
         long b=1;
         long c=a+b;
-        long suma=2;
+        long suma=0;
 
+        while (c <= granica)    {
 
-        while (suma-c<granica)
-        {
-           a=b;
-           b=c;
-           c=a+b;
-
-               if ((c % 2) == 0) {
-                   suma += c;
-               }
-
-           System.out.println("suma: "+suma);
+            if (c % 2 == 0)   { suma += c;    }
+            a = b;
+            b = c;
+            c = a + b;
         }
-        return suma-c;
+        return suma;
     }
 
 
